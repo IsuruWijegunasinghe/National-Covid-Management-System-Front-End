@@ -24,10 +24,13 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/tableStyle.css"> -->
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body onload="loadStatistics()">
+<body onload="loadPatientDetails()">
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -53,11 +56,13 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <!--
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
                                     <a class="popup-with-form" href="#test-form">Log In</a>
                                 </div>
                             </div>
+                        -->
                         </div>
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -76,7 +81,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Statistics</h3>
+                        <h3>Patient Details</h3>
                     </div>
                 </div>
             </div>
@@ -186,7 +191,14 @@
 -->
     <!-- stat_area_end -->
     <div>
-        <p id='showData'></p>
+        <p id='showPatientData'></p>
+        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+            <div class="Appointment">
+                <div class="btn btn-primary" class="book_btn d-none d-lg-block">
+                    <a class="popup-with-form" href="#patient-form">Admit / Discharge Patient</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 <!-- footer start -->
@@ -250,20 +262,32 @@
     <!-- link that opens popup -->
 
     <!-- login form start -->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <form id="patient-form" class="white-popup-block mfp-hide">
         <div class="popup_box ">
             <div class="popup_inner">
-                <h3>Log In</h3>
+                <h3>Admit / Discharge Patient</h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12">
-                            <input id="username" type="text"  placeholder="Username">
+                            <input id="patientID" type="text"  placeholder="Patient ID">
                         </div>
                         <div class="col-xl-12">
-                            <input id="password" type="password"  placeholder="Password">
+                            <input id="doctorID" type="text"  placeholder="Doctor ID">
                         </div>
                         <div class="col-xl-12">
-                            <button id="loginFormButton" type="button" class="boxed-btn3">Log In</button>
+                            <label for="severityLevel">Severity Level :</label>
+                            <div class="form-select">
+                                <select name="severityLevel" id="severityLevel">
+                                    <option value="-1">Discharge</option>
+                                    <option value="low">Low</option>
+                                    <option value="moderate">Moderate</option>
+                                    <option value="critical">Critical</option>
+                                </select>
+                                <span class="select-icon"></span>
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <button id="patientUpdateButton" type="button" class="boxed-btn3">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -299,7 +323,7 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-    
+
     <!-- Service js -->
     <script src="js/services.js"></script>
 

@@ -2178,8 +2178,18 @@ h3 {
   color: red;
 }
 
+#patient-form .white-popup-block .popup_inner .gj-datepicker span {
+  color: red;
+}
+
+
 /* line 372, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
 #test-form .white-popup-block input {
+  width: 100%;
+  height: 50px;
+}
+
+#patient-form .white-popup-block input {
   width: 100%;
   height: 50px;
 }
@@ -2649,14 +2659,36 @@ h3 {
   transform: translate(-50%, -50%);
 }
 
+#patient-form {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 /* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
 #test-form .mfp-close-btn-in .mfp-close {
   color: #333;
   display: none !important;
 }
 
+#patient-form .mfp-close-btn-in .mfp-close {
+  color: #333;
+  display: none !important;
+}
+
 /* line 155, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
 #test-form button.mfp-close {
+  display: none !important;
+}
+
+#patient-form button.mfp-close {
   display: none !important;
 }
 
